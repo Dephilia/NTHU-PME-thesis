@@ -1,0 +1,33 @@
+\begin{abstractzh}
+\setcounter{page}{1}
+植物的良好生長與澆水量之適當呈正相關，而植物的疾病發生與葉面的濕度有高度相關。在現代農業的溫室栽培，植株澆灌水量與方位之精確的控制可以降低疾病。以往主要的澆灌方式，一為人工持噴罐頭灑水，二為自溫室頂部灑水，然而比較此兩種方式，前者需要耗費人力且水量不精確，而後者雖然簡單方便，卻會造成葉面浸潤，進而增加植物的疾病發生率，且仍然無法精確控制個別植株的水量。
+
+本研究研發一新型多制動龍門型澆水機器人，可應用於蝴蝶蘭植株栽培溫室中。首先藉由應用YOLOv4-tiny物件辨識技術，偵測植株位置，再經由計算圖像回歸直線以估測植株姿態。並且利用反應變形路徑演算法進行路徑規劃，以降低姿態估測的不確定性。最後透過控制龍門上的噴水頭位置制動器，使制動器沿著規劃路徑移動，藉以避開葉面區域澆水，最終減少葉面之潮濕度。
+
+本研究建構於機器人系統（ROS）上，並且透過Nvidia Xavier實現演算法。最終，與過往的研究比較，本研究實現了82\%的澆水成功率，根據使用者設定，可以達到每秒3個植株以上的速度進行精準澆水。
+
+\end{abstractzh}
+
+
+\begin{abstracten}
+The growth of the plants is positively correlated to the amount of watering. Also, the incidence rate is often highly related to the humidity of the leaves. In modern greenhouse agriculture, the precise control of watering direction and amount can reduce the incident rate of plants. In the past, there were two primary watering ways for the greenhouse: The first one is manual watering that requires human resources and cannot precisely control the water direction and amount. The other one is the overhead irrigation system, which is convenient and straightforward but will cause infiltration on the leaf surface, increasing the incidence rate of plants and fail to control the water amount on each plant.
+
+This research develops a new type of gantry robot to water Phalaenopsis orchid seedlings in the greenhouse. First, this work uses YOLOv4-tiny as the neural network model to locate the seedlings and to regress the cropped image to estimate the poses of the seedlings. Furthermore, the reactive deformation trajectory planning algorithm is utilized to generate the sprayer trajectory and to reduce the uncertainty of pose estimation. Finally, multiple sprayers are guided along the planned path to water the soil portion other than the leaf area of plants, which can mitigate the infiltration on leaves.
+
+The gantry robot is implemented on the robot operation system (ROS) that runs on an Nvidia Xavier computer. Eventually, compared with the earlier works, the proposed system guarantees that the watering success rate and the watering speed can reach 82\% and at least three seedlings per second, respectively.
+\end{abstracten}
+
+\begin{comment}
+    \keywords{Object detection, Path planning, Gantry robot, Computer vision, Orchids, Greenhouse, Smart farming, Robot Operation System}
+\end{comment}
+
+%\begin{comment}
+%\category{I2.10}{Computing Methodologies}{Artificial Intelligence --
+%Vision and Scene Understanding} \category{H5.3}{Information
+%Systems}{Information Interfaces and Presentation (HCI) -- Web-based
+%Interaction.}
+%
+%\terms{Design, Human factors, Performance.}
+%
+%\keywords{Motor control, Path planning, Smart agriculture}
+%\end{comment}

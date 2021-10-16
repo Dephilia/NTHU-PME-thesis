@@ -1,0 +1,153 @@
+\documentclass{nthuthesis}
+
+% === Define Package
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{wallpaper}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{physics}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{hhline}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{floatrow}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{cleveref}
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{emptypage}
+\usepackage{titletoc}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\floatsetup[table]{capposition=top}
+
+\makeatletter
+% Reinsert missing \algbackskip
+\def\algbackskip{\hskip-\ALG@thistlm}
+
+\providecommand\add@text{}
+\newcommand\tagaddtext[1]{%
+  \gdef\add@text{#1\gdef\add@text{}}}% 
+  
+\renewcommand\tagform@[1]{%
+  \maketag@@@{\llap{\add@text\quad}(\ignorespaces#1\unskip\@@italiccorr)}%
+}
+
+\makeatother
+
+
+
+% declare the path(s) where your graphic files are
+\graphicspath{{./figsrc/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+% Using the tex-text mapping for ligatures etc.
+\defaultfontfeatures{Mapping=tex-text}
+
+% Set the default fonts
+
+% English font
+% Note: please refer to 'fc-list :outline -f "%{family}\n"' for choosing a valid font name
+\usepackage{fontspec}
+%\setmainfont{Times New Roman.ttf}
+\setmainfont{Times New Roman}
+
+% Chinese font
+% Note: please refer to 'fc-list :outline -f "%{family}\n"' for choosing a valid font name
+\setCJKmainfont[AutoFakeBold=3,AutoFakeSlant=.4]{kaiu.ttf}
+\setCJKmonofont[AutoFakeBold=3,AutoFakeSlant=.4]{kaiu.ttf}
+\defaultCJKfontfeatures{AutoFakeBold=6,AutoFakeSlant=.4}
+
+\CenterWallPaper{0.25}{nthulogo.png}
+
+
+% Title Setting
+\titleformat{\chapter}[display]
+  {\Large\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{0pt}{\Large}
+% \titleformat{\section}
+%   {\sffamily\large\bfseries\centering}
+%   {\thesection}{1em}{}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+
+
+% TOC setting
+\titlecontents{chapter}% <section-type>
+  [0pt]% <left>
+  {\addvspace{1em}}% <above-code>
+  {\bfseries\chaptername\ \thecontentslabel\quad}% <numbered-entry-format>
+  {}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+% Your information goes here
+\input{nthuvars}
+
+\begin{document}
+
+\frontmatter
+
+\makecover
+% \makecopyright
+
+
+% 電子檔著作權授權書
+% 紙本論文著作權授權書
+% 電子檔案上網授權書
+% 延後公開申請書
+% 指導教授推薦書
+% 考試委員審定書
+
+\makeatletter\@twosidefalse\@mparswitchfalse\makeatother
+
+\input{00_abstract}
+\input{00_acknowledgements}
+
+{\singlespacing
+\tableofcontents
+\listoffigures
+\listoftables
+}
+
+\mainmatter
+
+\makeatletter\@twosidetrue\@mparswitchtrue\makeatother
+
+% Your thesis goes here
+\input{01_introduction}
+% \input{02_methodology}
+% \input{03_Implementation}
+% \input{04_result-and-discussion}
+% \input{05_conclusion}
+
+\appendix
+
+\backmatter
+
+\renewcommand{\bibname}{References}
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliographystyle{ieeetr}
+
+% Your bibliography goes here
+{\singlespacing
+ \bibliography{thesis}
+}
+
+\appendix
+\input{10_appendix}
+
+\end{document}
