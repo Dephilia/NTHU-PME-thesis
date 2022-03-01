@@ -9,8 +9,6 @@
 \usepackage{array}
 \usepackage{wallpaper}
 \usepackage{cite}
-\usepackage{caption}
-\usepackage{subcaption}
 \usepackage{physics}
 \usepackage{multirow}
 \usepackage{makecell}
@@ -30,7 +28,24 @@
 \usepackage{indentfirst}
 \usepackage{emptypage}
 \usepackage{titletoc}
+\usepackage{titlesec}
+\usepackage{pdfpages}
+\usepackage{notoccite} % PREVENTS CITES IN CAPTIONS FROM MISNUMBERING YOUR REFERENCES 
+\usepackage{caption}
+\usepackage[labelformat=simple]{subcaption} % Fig.1.1a >>>> Fig.1.1(a)
+\renewcommand\thesubfigure{(\alph{subfigure})}
 \usepackage[ruled,linesnumbered]{algorithm2e}
+
+\titleformat{\section}
+  {\normalfont\fontsize{18}{20}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\fontsize{16}{20}\bfseries}{\thesubsection}{1em}{}
+
+% Make caption format to be <Table,Figure> <Number> <Title>
+\captionsetup[figure]{name={Figure },labelsep=space}
+\captionsetup[table]{name={Table },labelsep=space}
+
+\newcommand{\Paragraph}[1]{\paragraph{#1}\mbox{}\\} % New paragraph will add new line
 
 \floatsetup[table]{capposition=top}
 
@@ -48,7 +63,8 @@
 
 \makeatother
 
-
+\newcommand{\Keywordsen}{\vspace*{\fill}\noindent\textbf{Keywords:}\ } % Keywords
+\newcommand{\Keywordszh}{\vspace*{\fill}\noindent\textbf{關鍵字：}\ } % Keywords
 
 % declare the path(s) where your graphic files are
 \graphicspath{{./figsrc/}}
